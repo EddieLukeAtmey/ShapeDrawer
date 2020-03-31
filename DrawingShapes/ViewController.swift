@@ -14,13 +14,16 @@ final class ViewController: UIViewController {
     @IBOutlet private weak var vShapeContainer: UIView!
     @IBOutlet private weak var vShapeDisplay: UIView!
     private lazy var shapeDrawer = ShapeDrawer(view: vShapeDisplay)
+    private var pinHandler: AddPinViewHandler!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        pinHandler = AddPinViewHandler(view: vShapeDisplay, delegate: self)
     }
 
     @IBAction private func drawRectangle() {
-        shapeDrawer.shape = .rectangle(width: 100, height: 75)
+        shapeDrawer.shape = .rectangle(width: Int(vShapeDisplay.bounds.size.width) - 20,
+                                       height: Int(vShapeDisplay.bounds.size.height) - 20)
     }
 
     @IBAction private func drawCircle() {
@@ -49,5 +52,15 @@ extension ViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+}
+
+// MARK: - Pin Delegates
+extension ViewController: AddPinViewHandlerDelegate {
+    func pinViewHandler(_: AddPinViewHandler, didAdd pin: PinViewProtocol) {
+    }
+
+    func pinViewHandler(_: AddPinViewHandler, didTap pin: PinViewProtocol) {
+        debugPrint(pin)
     }
 }

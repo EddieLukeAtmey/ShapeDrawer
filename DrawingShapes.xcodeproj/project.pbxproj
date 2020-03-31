@@ -15,6 +15,7 @@
 		2C36154D2432F11A00D57D06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C36154B2432F11A00D57D06 /* LaunchScreen.storyboard */; };
 		2C3615562432FADA00D57D06 /* ShapeDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3615552432FADA00D57D06 /* ShapeDrawer.swift */; };
 		2C3615592433015400D57D06 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3615582433015400D57D06 /* Shapes.swift */; };
+		2C36155D2433309F00D57D06 /* ShapeInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C36155C2433309F00D57D06 /* ShapeInteraction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2C36154E2432F11A00D57D06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C3615552432FADA00D57D06 /* ShapeDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeDrawer.swift; sourceTree = "<group>"; };
 		2C3615582433015400D57D06 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		2C36155C2433309F00D57D06 /* ShapeInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeInteraction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				2C3615572433014D00D57D06 /* Shapes */,
 				2C3615542432FACC00D57D06 /* Drawer */,
+				2C36155B2433308600D57D06 /* Actions */,
 				2C3615402432F11500D57D06 /* AppDelegate.swift */,
 				2C3615422432F11500D57D06 /* SceneDelegate.swift */,
 				2C3615442432F11500D57D06 /* ViewController.swift */,
@@ -87,6 +90,14 @@
 				2C3615582433015400D57D06 /* Shapes.swift */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		2C36155B2433308600D57D06 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				2C36155C2433309F00D57D06 /* ShapeInteraction.swift */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C36155D2433309F00D57D06 /* ShapeInteraction.swift in Sources */,
 				2C3615452432F11500D57D06 /* ViewController.swift in Sources */,
 				2C3615412432F11500D57D06 /* AppDelegate.swift in Sources */,
 				2C3615592433015400D57D06 /* Shapes.swift in Sources */,

@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xQZ-YE-ikw">
-                                <rect key="frame" x="147.5" y="278.5" width="119" height="30"/>
+                                <rect key="frame" x="49" y="278.5" width="316" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itf-uI-jIe">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -32,12 +32,28 @@
                                             <action selector="drawRectangle" destination="BYZ-38-t0r" eventType="touchUpInside" id="KqB-cD-tty"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YV7-Vw-1PZ">
+                                        <rect key="frame" x="129" y="0.0" width="97" height="30"/>
+                                        <state key="normal" title="Clear Rotation"/>
+                                        <connections>
+                                            <action selector="clearRotation" destination="BYZ-38-t0r" eventType="touchUpInside" id="lMZ-Qs-25y"/>
+                                            <action selector="drawRectangle" destination="BYZ-38-t0r" eventType="touchUpInside" id="b3S-QD-Mr3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inb-8z-wH0">
+                                        <rect key="frame" x="236" y="0.0" width="80" height="30"/>
+                                        <state key="normal" title="Clear Zoom"/>
+                                        <connections>
+                                            <action selector="clearZoom" destination="BYZ-38-t0r" eventType="touchUpInside" id="RXn-Yt-j7a"/>
+                                            <action selector="drawRectangle" destination="BYZ-38-t0r" eventType="touchUpInside" id="KfW-Ug-Gez"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="gVP-bA-gPK">
                                 <rect key="frame" x="0.0" y="328.5" width="414" height="239"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3o-ul-Ovy">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3o-ul-Ovy" customClass="ShapeContainerView" customModule="DrawingShapes" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="374" height="199"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfH-XV-AhM">
@@ -73,7 +89,7 @@
                                     <constraint firstItem="O3o-ul-Ovy" firstAttribute="leading" secondItem="gVP-bA-gPK" secondAttribute="leading" constant="20" id="nlj-ha-dip"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="XUl-uE-DDw"/>
+                                    <outlet property="delegate" destination="O3o-ul-Ovy" id="zw3-yJ-1hP"/>
                                 </connections>
                             </scrollView>
                         </subviews>
@@ -88,6 +104,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="scrollViewContainer" destination="gVP-bA-gPK" id="P0Q-JQ-h06"/>
                         <outlet property="vShapeContainer" destination="O3o-ul-Ovy" id="J7d-Ot-ITr"/>
                         <outlet property="vShapeDisplay" destination="nfH-XV-AhM" id="AZZ-E6-lvd"/>
                     </connections>

@@ -8,17 +8,29 @@
 
 import UIKit
 
+final class ShapeContainerView: ScrollViewZoomable {
+    override var retainScaleViews: [UIView] {
+        guard let shapeDisplay = subviews.first else { return [] }
+        return shapeDisplay.subviews.lazy.compactMap { $0 as? PinViewProtocol }
+    }
+}
+
 final class ViewController: UIViewController {
 
     /// Zoomable
-    @IBOutlet private weak var vShapeContainer: UIView!
+    @IBOutlet private weak var scrollViewContainer: UIScrollView!
+    @IBOutlet private weak var vShapeContainer: ShapeContainerView!
     @IBOutlet private weak var vShapeDisplay: UIView!
     private lazy var shapeDrawer = ShapeDrawer(view: vShapeDisplay)
     private var pinHandler: AddPinViewHandler!
 
+    // Interaction information
+    private var originalRotationTransform: CGAffineTransform!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         pinHandler = AddPinViewHandler(view: vShapeDisplay, delegate: self)
+        originalRotationTransform = vShapeDisplay.transform
     }
 
     @IBAction private func drawRectangle() {
@@ -29,13 +41,13 @@ final class ViewController: UIViewController {
     @IBAction private func drawCircle() {
         shapeDrawer.shape = .circle(radius: 50)
     }
-}
 
-// MARK: - ScrollView Zooming
-extension ViewController: UIScrollViewDelegate {
+    @IBAction private func clearRotation() {
+        UIView.animate(withDuration: 0.25) { self.vShapeDisplay.transform = self.originalRotationTransform }
+    }
 
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return vShapeContainer
+    @IBAction private func clearZoom() {
+        scrollViewContainer.setZoomScale(0, animated: true)
     }
 }
 
@@ -58,6 +70,7 @@ extension ViewController: UIGestureRecognizerDelegate {
 // MARK: - Pin Delegates
 extension ViewController: AddPinViewHandlerDelegate {
     func pinViewHandler(_: AddPinViewHandler, didAdd pin: PinViewProtocol) {
+        pin.transform = vShapeContainer.transform.inverted()
     }
 
     func pinViewHandler(_: AddPinViewHandler, didTap pin: PinViewProtocol) {

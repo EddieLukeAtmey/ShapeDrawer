@@ -19,7 +19,7 @@ protocol AddPinViewHandlerDelegate: class {
 
 final class AddPinViewHandler: NSObject, UIGestureRecognizerDelegate {
 
-    private let pinSize = CGSize(width: 50, height: 50)
+    private let pinSize = CGSize(width: 25, height: 25)
     private var pinViews: [PinViewProtocol] { view.subviews.lazy.compactMap { $0 as? PinViewProtocol }  }
     private weak var view: UIView!
     private weak var delegate: AddPinViewHandlerDelegate!

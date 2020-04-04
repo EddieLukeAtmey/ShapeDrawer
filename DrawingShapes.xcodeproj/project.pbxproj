@@ -16,6 +16,7 @@
 		2C3615562432FADA00D57D06 /* ShapeDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3615552432FADA00D57D06 /* ShapeDrawer.swift */; };
 		2C3615592433015400D57D06 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3615582433015400D57D06 /* Shapes.swift */; };
 		2C36155D2433309F00D57D06 /* ShapeInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C36155C2433309F00D57D06 /* ShapeInteraction.swift */; };
+		2C82D6FB243890FB006F0D4A /* ScrollViewZoomable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C82D6FA243890FB006F0D4A /* ScrollViewZoomable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2C3615552432FADA00D57D06 /* ShapeDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeDrawer.swift; sourceTree = "<group>"; };
 		2C3615582433015400D57D06 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		2C36155C2433309F00D57D06 /* ShapeInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeInteraction.swift; sourceTree = "<group>"; };
+		2C82D6FA243890FB006F0D4A /* ScrollViewZoomable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewZoomable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,8 @@
 		2C36153F2432F11500D57D06 /* DrawingShapes */ = {
 			isa = PBXGroup;
 			children = (
+				2C82D6F9243890D5006F0D4A /* Commons */,
+				2C82D6F824388E8B006F0D4A /* Models */,
 				2C3615572433014D00D57D06 /* Shapes */,
 				2C3615542432FACC00D57D06 /* Drawer */,
 				2C36155B2433308600D57D06 /* Actions */,
@@ -98,6 +102,21 @@
 				2C36155C2433309F00D57D06 /* ShapeInteraction.swift */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		2C82D6F824388E8B006F0D4A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C82D6F9243890D5006F0D4A /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				2C82D6FA243890FB006F0D4A /* ScrollViewZoomable.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +196,7 @@
 				2C3615592433015400D57D06 /* Shapes.swift in Sources */,
 				2C3615562432FADA00D57D06 /* ShapeDrawer.swift in Sources */,
 				2C3615432432F11500D57D06 /* SceneDelegate.swift in Sources */,
+				2C82D6FB243890FB006F0D4A /* ScrollViewZoomable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
